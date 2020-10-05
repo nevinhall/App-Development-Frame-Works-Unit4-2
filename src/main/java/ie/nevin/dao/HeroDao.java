@@ -1,4 +1,4 @@
-package dao;
+package ie.nevin.dao;
 
 public interface HeroDao {
     int getHeroCount();
