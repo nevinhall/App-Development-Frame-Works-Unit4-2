@@ -11,7 +11,11 @@ public interface HeroDao {
 
     List<Hero> findAllHeros();
 
-    public int deleteHeroId(int heroId);
+     int deleteHeroId(int heroId);
+
+    int changeHeroName(String heroName, String oldName);
+
+    boolean exists(String heroName);
 
 
 }

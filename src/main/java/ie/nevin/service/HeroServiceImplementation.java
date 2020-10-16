@@ -42,5 +42,25 @@ public class HeroServiceImplementation implements HeroService {
 
         return res;
     }
+
+    @Override
+    public int changeHeroName(String heroName, String OldHeroName) {
+        if(! heroDao.exists(OldHeroName)){
+            System.out.println("There is no Hero with the Name " + OldHeroName + " in the database");
+            return 0;
+        }else if(heroDao.exists(heroName)){
+            System.out.println("There is already a Hero with the Name " + heroName + " in the database");
+            return 0;
+        }else{
+            return heroDao.changeHeroName(heroName, OldHeroName);
+        }
+
+
+    }
+
+    @Override
+    public boolean exists(String heroName) {
+        return heroDao.exists(heroName);
+    }
 }
 

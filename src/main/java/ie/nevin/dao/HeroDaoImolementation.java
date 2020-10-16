@@ -43,5 +43,21 @@ public class HeroDaoImolementation implements HeroDao {
         return jdbcTemplate.update(SQL, new Object[] {heroId});
     }
 
+    @Override
+    public int changeHeroName(String heroName, String oldName) {
+        final String SQL = "UPDATE hero set hero.heroName = ? WHERE hero.heroName = ?";
+        int res = jdbcTemplate.update(SQL, new Object[] {heroName, oldName});
+
+        if(res == 0){
+            System.out.println("Failed to change the hero name, perhaps the hero didn't exist ?");
+        }
+        return res;
+    }
+
+    @Override
+    public boolean exists(String heroName) {
+        return 1 == jdbcTemplate.queryForObject("SELECT COUNT(1) FROM hero WHERE hero.heroName = ?",new Object[] {heroName}, Integer.class);
+    }
+
 
 }
