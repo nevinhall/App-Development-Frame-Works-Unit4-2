@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class HeroDaoImolementation implements HeroDao {
     @Autowired
@@ -24,6 +26,15 @@ public class HeroDaoImolementation implements HeroDao {
             return null;
         }
 
+    }
+
+    @Override
+    public List<Hero> findAllHeros() {
+        try {
+            return jdbcTemplate.query("SELECT * FROM hero ", new HeroRowMapper());
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 

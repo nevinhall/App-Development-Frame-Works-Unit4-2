@@ -13,6 +13,8 @@ public class Main {
         System.out.println("Find Id = 1 " + heroService.findHero(1));
         System.out.println("Find Id = 1 " + heroService.findHero(3));
 
+        System.out.println("Heros in Database are: " + heroService.findAllHeroes());
+
         
     }
 

@@ -6,6 +6,8 @@ import ie.nevin.dao.HeroDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HeroServiceImplementation implements HeroService {
     @Autowired
@@ -24,6 +26,11 @@ public class HeroServiceImplementation implements HeroService {
            System.out.println("There is no Hero with ID " + heroId + " in the database");
         }
         return returnedHero;
+    }
+
+    @Override
+    public List<Hero> findAllHeroes() {
+        return heroDao.findAllHeros();
     }
 }
 
