@@ -11,9 +11,12 @@ public class Main {
         System.out.println("There are " + heroService.countTheHeroes() + " in the database");
 
         System.out.println("Find Id = 1 " + heroService.findHero(1));
-        System.out.println("Find Id = 1 " + heroService.findHero(3));
+        System.out.println("Find Id = 3 " + heroService.findHero(3));
 
         System.out.println("Heros in Database are: " + heroService.findAllHeroes());
+
+        System.out.println("Delte Id  " + heroService.deleteHero(1));
+        System.out.println("Find Id = 1 " + heroService.findHero(1));
 
         
     }

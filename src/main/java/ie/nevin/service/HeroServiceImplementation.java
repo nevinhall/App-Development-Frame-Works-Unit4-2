@@ -32,5 +32,15 @@ public class HeroServiceImplementation implements HeroService {
     public List<Hero> findAllHeroes() {
         return heroDao.findAllHeros();
     }
+
+    @Override
+    public int deleteHero(int heroId) {
+        int res = heroDao.deleteHeroId(heroId);
+        if(res == 0){
+            System.out.println("There is no Hero with ID " + heroId + " in the database");
+        }
+
+        return res;
+    }
 }
 

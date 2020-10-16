@@ -37,5 +37,11 @@ public class HeroDaoImolementation implements HeroDao {
         }
     }
 
+    @Override
+    public int deleteHeroId(int heroId) {
+        final String SQL = "DELETE FROM hero WHERE hero.heroId = ?";
+        return jdbcTemplate.update(SQL, new Object[] {heroId});
+    }
+
 
 }
