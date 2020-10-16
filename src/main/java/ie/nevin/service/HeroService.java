@@ -17,6 +17,9 @@ public interface HeroService {
 
     boolean exists(String heroName);
 
+    Hero addHero(String heroName);
+
+
 
 
 

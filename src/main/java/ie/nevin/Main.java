@@ -24,6 +24,8 @@ public class Main {
         System.out.println("Change domi to luke " + heroService.changeHeroName("luke","domi"));
         System.out.println("Change luke to nevin " + heroService.changeHeroName("nevin","luke"));
 
+        System.out.println("Add Hero Mom " + heroService.addHero("mom"));
+
 
 
 

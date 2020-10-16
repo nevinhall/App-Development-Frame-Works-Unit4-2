@@ -62,5 +62,14 @@ public class HeroServiceImplementation implements HeroService {
     public boolean exists(String heroName) {
         return heroDao.exists(heroName);
     }
+
+    @Override
+    public Hero addHero(String heroName) {
+        if (!exists(heroName)) {
+            return heroDao.findHeroByHeroId(heroDao.addHero(heroName));
+        }
+        System.out.println("There is already a Hero with the Name " + heroName + " in the database");
+        return null;
+    }
 }
 

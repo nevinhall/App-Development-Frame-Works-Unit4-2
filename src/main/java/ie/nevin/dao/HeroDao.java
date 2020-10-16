@@ -17,5 +17,7 @@ public interface HeroDao {
 
     boolean exists(String heroName);
 
+    int addHero(final String heroName);
+
 
 }
