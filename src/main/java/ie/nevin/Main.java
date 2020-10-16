@@ -9,7 +9,12 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         HeroService heroService = (HeroService) context.getBean("heroServiceImplementation");
         System.out.println("There are " + heroService.countTheHeroes() + " in the database");
+
+        System.out.println("Find Id = 1 " + heroService.findHero(1));
+        System.out.println("Find Id = 1 " + heroService.findHero(3));
+
         
     }
+
 
 }
